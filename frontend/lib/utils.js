@@ -8,7 +8,7 @@ export const FALLBACK_IMAGE = '/logo_brief_ai_news.png';
  * @param {string|Object} imageUrl - The raw image data from the backend
  * @returns {string} Fully qualified image URL or fallback
  */
-export const normalizeImages = (imageUrl) => {
+export const normalizeImage = (imageUrl) => {
     try {
         if (!imageUrl) return FALLBACK_IMAGE;
 

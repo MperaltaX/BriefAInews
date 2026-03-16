@@ -73,11 +73,10 @@ export default function Header() {
                             {/* Logo - Mobile (always visible) + Desktop (only when logo section hidden) */}
                             <a
                                 href="/"
-                                className={`flex items-center gap-1 shrink-0 transition-all duration-300 ${
-                                    logoHidden
+                                className={`flex items-center gap-1 shrink-0 transition-all duration-300 ${logoHidden
                                         ? 'md:opacity-100 md:w-auto md:mr-6'
                                         : 'md:opacity-0 md:w-0 md:mr-0 md:overflow-hidden'
-                                }`}
+                                    }`}
                             >
                                 <span className="text-white text-xl font-black tracking-tight whitespace-nowrap">
                                     Brief<span className="text-[#E85D56]">AI</span>news
@@ -88,18 +87,16 @@ export default function Header() {
                             </a>
 
                             {/* Nav Filters - Desktop */}
-                            <nav className={`hidden md:flex items-center gap-1 transition-all duration-300 ${
-                                logoHidden ? 'justify-start' : 'justify-center w-full'
-                            }`}>
+                            <nav className={`hidden md:flex items-center gap-1 transition-all duration-300 ${logoHidden ? 'justify-start' : 'justify-center w-full'
+                                }`}>
                                 {filters.map((filter) => (
                                     <button
                                         key={filter}
                                         onClick={() => handleFilterChange(filter)}
-                                        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                                            currentFilter === filter
+                                        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${currentFilter === filter
                                                 ? 'bg-white/15 text-white'
                                                 : 'text-gray-400 hover:text-white hover:bg-white/5'
-                                        }`}
+                                            }`}
                                         aria-pressed={currentFilter === filter}
                                     >
                                         {filter}
@@ -123,7 +120,7 @@ export default function Header() {
                                             <span className="text-xs font-medium text-gray-300">
                                                 Hola, <span className="text-white">{user.name.split(' ')[0]}</span>
                                             </span>
-                                            <button 
+                                            <button
                                                 onClick={logout}
                                                 className="text-xs font-medium text-gray-400 hover:text-red-400 transition-colors"
                                             >
@@ -158,11 +155,10 @@ export default function Header() {
                                     <button
                                         key={filter}
                                         onClick={() => handleFilterChange(filter)}
-                                        className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
-                                            currentFilter === filter
+                                        className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${currentFilter === filter
                                                 ? 'bg-white/15 text-white'
                                                 : 'text-gray-400 hover:text-white'
-                                        }`}
+                                            }`}
                                         aria-pressed={currentFilter === filter}
                                     >
                                         {filter}

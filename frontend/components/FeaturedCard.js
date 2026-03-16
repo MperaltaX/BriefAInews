@@ -20,10 +20,10 @@ export default function FeaturedCard({ article }) {
 
     const publishedDate = article.published_time
         ? new Date(article.published_time).toLocaleDateString('es-ES', {
-              year: 'numeric',
-              month: 'short',
-              day: '2-digit',
-          })
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit',
+        })
         : '';
 
     return (

@@ -13,20 +13,22 @@ const PORT = process.env.PORT || 3001;
 // Middlewares
 // CORS is critical to allow Next.js app on port 3000 to requests resources here
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  methods: ['GET', 'POST', 'PUT'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.json());
 
 // Main Root Route
 app.get('/', (req, res) => {
-  res.json({ message: 'BriefAInews API is running' });
+    res.json({ message: 'BriefAInews API is running' });
 });
 
 // Routes
 app.use('/api/news', newsRoutes);
 app.use('/api/auth', authRoutes);
+const aiRoutes = require('./routes/ai.routes');
+app.use('/api/ai', aiRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
@@ -39,7 +41,7 @@ const startServer = async () => {
             dbName: 'sistema'
         });
         console.log('Successfully connected to MongoDB.');
-        
+
         app.listen(PORT, () => {
             console.log(`Backend service running on http://localhost:${PORT}`);
         });

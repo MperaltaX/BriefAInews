@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "message": "Path parameters result in path with invalid segments:\nValue of type Undefined is not a valid path parameter\n/threads/undefined/runs/thread_GhEDosNev1gZfANCIBiUB37c\n         ^^^^^^^^^",
+  "stack": "Error: Path parameters result in path with invalid segments:\nValue of type Undefined is not a valid path parameter\n/threads/undefined/runs/thread_GhEDosNev1gZfANCIBiUB37c\n         ^^^^^^^^^\n    at path (C:\\Users\\Mattias_Peralta\\Documents\\GitHub\\personal_projects\\BriefAInews\\backend\\node_modules\\openai\\internal\\utils\\path.js:68:15)\n    at Runs.retrieve (C:\\Users\\Mattias_Peralta\\Documents\\GitHub\\personal_projects\\BriefAInews\\backend\\node_modules\\openai\\resources\\beta\\threads\\runs\\runs.js:42:50)\n    at Object.generateSummary (C:\\Users\\Mattias_Peralta\\Documents\\GitHub\\personal_projects\\BriefAInews\\backend\\services\\ai.service.js:32:56)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async C:\\Users\\Mattias_Peralta\\Documents\\GitHub\\personal_projects\\BriefAInews\\backend\\test_ai.js:7:25",
+  "response": null
+}
