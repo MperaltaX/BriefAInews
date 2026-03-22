@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
-
 const newsRoutes = require('./routes/news.routes');
 const authRoutes = require('./routes/auth.routes');
 const { errorHandler } = require('./middlewares/error.middleware');
@@ -18,6 +18,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.json());
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Main Root Route
 app.get('/', (req, res) => {
@@ -36,9 +37,9 @@ app.use(errorHandler);
 // Database connection & Server initialization
 const startServer = async () => {
     try {
-        const mongoUri = process.env.MONGO_URI || 'mongodb+srv://digital:d3partament0BI@edn.szgrd.mongodb.net/5dias_web?retryWrites=true&w=majority';
+        const mongoUri = process.env.MONGO_URI || 'mongodb+srv://digital:d3partament0BI@edn.szgrd.mongodb.net/ai_news?retryWrites=true&w=majority';
         await mongoose.connect(mongoUri, {
-            dbName: 'sistema'
+            dbName: 'ai_news'
         });
         console.log('Successfully connected to MongoDB.');
 

@@ -74,15 +74,12 @@ export default function Header() {
                             <a
                                 href="/"
                                 className={`flex items-center gap-1 shrink-0 transition-all duration-300 ${logoHidden
-                                        ? 'md:opacity-100 md:w-auto md:mr-6'
-                                        : 'md:opacity-0 md:w-0 md:mr-0 md:overflow-hidden'
+                                    ? 'md:opacity-100 md:w-auto md:mr-6'
+                                    : 'md:opacity-0 md:w-0 md:mr-0 md:overflow-hidden'
                                     }`}
                             >
                                 <span className="text-white text-xl font-black tracking-tight whitespace-nowrap">
                                     Brief<span className="text-[#E85D56]">AI</span>news
-                                </span>
-                                <span className="text-gray-400 text-[10px] font-medium uppercase tracking-widest whitespace-nowrap">
-                                    Paraguay
                                 </span>
                             </a>
 
@@ -94,8 +91,8 @@ export default function Header() {
                                         key={filter}
                                         onClick={() => handleFilterChange(filter)}
                                         className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${currentFilter === filter
-                                                ? 'bg-white/15 text-white'
-                                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                            ? 'bg-white/15 text-white'
+                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
                                             }`}
                                         aria-pressed={currentFilter === filter}
                                     >
@@ -156,8 +153,8 @@ export default function Header() {
                                         key={filter}
                                         onClick={() => handleFilterChange(filter)}
                                         className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${currentFilter === filter
-                                                ? 'bg-white/15 text-white'
-                                                : 'text-gray-400 hover:text-white'
+                                            ? 'bg-white/15 text-white'
+                                            : 'text-gray-400 hover:text-white'
                                             }`}
                                         aria-pressed={currentFilter === filter}
                                     >
@@ -183,9 +180,6 @@ export default function Header() {
                         <h1 className="text-3xl font-black tracking-tight text-gray-900">
                             Brief<span className="text-[#E85D56]">AI</span>news
                         </h1>
-                        <span className="block text-[11px] font-semibold uppercase tracking-[0.25em] text-gray-400 mt-0.5">
-                            Paraguay
-                        </span>
                     </a>
                 </div>
             </div>

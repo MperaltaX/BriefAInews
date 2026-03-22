@@ -13,7 +13,7 @@ const bcrypt = require('bcryptjs');
  */
 
 /**
- * Schema representing a registered user in the `users_briefan` collection.
+ * Schema representing a registered user in the `users` collection.
  */
 const UserSchema = new mongoose.Schema({
     name: {
@@ -72,8 +72,8 @@ UserSchema.methods.comparePassword = async function (candidatePassword) {
 };
 
 /**
- * The 'User' model bound to the 'users_briefan' collection.
+ * The 'User' model bound to the 'users' collection.
  */
-const User = mongoose.model('User', UserSchema, 'users_briefan');
+const User = mongoose.model('User', UserSchema, 'users');
 
 module.exports = User;

@@ -1,5 +1,5 @@
 const express = require('express');
-const { getSummary } = require('../controllers/ai.controller');
+const { getSummary, getDailyAudio } = require('../controllers/ai.controller');
 
 const router = express.Router();
 
@@ -8,5 +8,11 @@ const router = express.Router();
  * Route to generate a summary for a given content
  */
 router.post('/summary', getSummary);
+
+/**
+ * GET /api/ai/daily-audio
+ * Route to get or generate the daily audio summary
+ */
+router.get('/daily-audio', getDailyAudio);
 
 module.exports = router;

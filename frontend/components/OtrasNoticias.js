@@ -7,7 +7,7 @@ const ITEMS_PER_PAGE = 8;
 
 /**
  * OtrasNoticias Component
- * "Destacados de la Semana" section with paginated grid.
+ * "Últimos destacados" section with paginated grid.
  * @param {Object} props
  * @param {import('@/lib/utils').INews[]} props.articles - Array of news articles to display
  */
@@ -28,7 +28,7 @@ export default function OtrasNoticias({ articles }) {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Section Header */}
             <div className="section-header">
-                <h2 className="section-title">Destacados de la Semana</h2>
+                <h2 className="section-title">Últimos destacados</h2>
                 <span className="section-link cursor-pointer">
                     Ver todo
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

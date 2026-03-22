@@ -5,6 +5,7 @@ import LatestNews from '@/components/LatestNews';
 import MustRead from '@/components/MustRead';
 import OtrasNoticias from '@/components/OtrasNoticias';
 import Footer from '@/components/Footer';
+import DailyAudioPlayer from '@/components/DailyAudioPlayer';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,8 +47,8 @@ export default async function Home({ searchParams }) {
     const heroSideArticles = news.slice(1, 5);
     const latestNewsArticles = news.slice(5, 8);
     const mustReadMain = news[8] || null;
-    const mustReadSide = news.slice(9, 11);
-    const weeklyHighlights = news.slice(11);
+    const mustReadSide = news.slice(9, 13);
+    const weeklyHighlights = news.slice(13);
 
     /* ── Empty state ── */
     if (!news || news.length === 0) {
@@ -74,6 +75,10 @@ export default async function Home({ searchParams }) {
             <NewsTicker headlines={tickerHeadlines} />
 
             <main>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 lg:mt-6">
+                    <DailyAudioPlayer />
+                </div>
+                
                 {/* ── Hero Section ── */}
                 <HeroSection
                     featured={heroFeatured}

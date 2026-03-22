@@ -7,11 +7,11 @@ import NewsModal from './NewsModal';
 
 /**
  * MustRead Component
- * "Lectura Obligada" section: 1 large card (left) + 2 compact cards with thumbnails (right).
+ * "Lectura Obligada" section: 1 large card (left) + 4 compact cards with thumbnails (right).
  * Clicking anywhere on the main card opens the summary modal.
  * @param {Object} props
  * @param {import('../lib/utils').INews} props.mainArticle - The main large article
- * @param {import('../lib/utils').INews[]} props.sideArticles - Side compact articles (max 2)
+ * @param {import('../lib/utils').INews[]} props.sideArticles - Side compact articles (max 4)
  */
 export default function MustRead({ mainArticle, sideArticles = [] }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,7 +39,7 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                 {/* Main Article - Large Card */}
                 <div className="lg:col-span-3">
                     <article
-                        className="bg-white rounded-2xl overflow-hidden card-hover cursor-pointer"
+                        className="bg-white rounded-2xl overflow-hidden card-hover cursor-pointer h-full flex flex-col"
                         onClick={() => setIsModalOpen(true)}
                         role="button"
                         tabIndex={0}
@@ -98,8 +98,14 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                                         {mainArticle.category}
                                     </span>
                                 )}
-                                <span className="text-xs text-gray-400">•</span>
-                                <span className="text-xs text-gray-400">1 min lectura</span>
+                                {mainArticle.country && (
+                                    <>
+                                        <span className="text-xs text-gray-400">•</span>
+                                        <span className="text-xs text-gray-500 font-medium">
+                                            {mainArticle.country}
+                                        </span>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </article>
