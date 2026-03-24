@@ -10,7 +10,7 @@ export default function LatestNews({ articles = [] }) {
     if (!articles || articles.length === 0) return null;
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="pt-2 pb-8">
             {/* Section Header */}
             <div className="section-header">
                 <h2 className="section-title">Últimas Noticias</h2>
@@ -28,6 +28,6 @@ export default function LatestNews({ articles = [] }) {
                     <StandardCard key={article.id_article || article._id} article={article} />
                 ))}
             </div>
-        </section>
+        </div>
     );
 }

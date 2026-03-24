@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { getRelativeTime, normalizeImage, FALLBACK_IMAGE } from '@/lib/utils';
 
 /**
@@ -19,6 +20,12 @@ export default function NewsModal({ article, isOpen, onClose }) {
     const [isGeneratingSummary, setIsGeneratingSummary] = useState(false);
     const [aiSummary, setAiSummary] = useState(null);
     const [aiError, setAiError] = useState(null);
+    const [mounted, setMounted] = useState(false);
+
+    /* ── Set mounted on client ── */
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     /* ── Lock body scroll when the modal is open ── */
     useEffect(() => {
@@ -81,11 +88,11 @@ export default function NewsModal({ article, isOpen, onClose }) {
         }
     };
 
-    if (!isOpen || !article) return null;
+    if (!isOpen || !article || !mounted) return null;
 
-    return (
+    return createPortal(
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-modal-overlay"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-modal-overlay"
             onClick={onClose}
         >
             <div
@@ -264,6 +271,7 @@ export default function NewsModal({ article, isOpen, onClose }) {
                     border-radius: 20px;
                 }
             `}</style>
-        </div>
+        </div>,
+        document.body
     );
 }

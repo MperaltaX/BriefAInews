@@ -25,7 +25,7 @@ export default function OtrasNoticias({ articles }) {
     };
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="pt-2 pb-8">
             {/* Section Header */}
             <div className="section-header">
                 <h2 className="section-title">Últimos destacados</h2>
@@ -37,8 +37,8 @@ export default function OtrasNoticias({ articles }) {
                 </span>
             </div>
 
-            {/* 4-Column Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 3-Column Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {visibleArticles.map((article) => (
                     <StandardCard key={article.id_article || article._id} article={article} />
                 ))}
@@ -48,12 +48,12 @@ export default function OtrasNoticias({ articles }) {
                 <div className="flex justify-center mt-10">
                     <button
                         onClick={handleLoadMore}
-                        className="px-8 py-3 bg-[#1a1a2e] hover:bg-[#2a2a4e] text-white font-semibold rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+                        className="px-9 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-[0_4px_14px_rgba(0,114,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,114,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
                     >
                         Ver más noticias
                     </button>
                 </div>
             )}
-        </section>
+        </div>
     );
 }

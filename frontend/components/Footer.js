@@ -25,13 +25,13 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-[#1a1a2e] text-white mt-16">
+        <footer className="bg-slate-900 text-slate-300 mt-16 border-t border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-10">
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
-                        <span className="text-xl font-black tracking-tight">
-                            Brief<span className="text-[#E85D56]">AI</span>news
+                        <span className="text-xl font-black tracking-tight text-white">
+                            Brief<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">AI</span>news
                         </span>
                         <p className="text-gray-400 text-sm mt-3 leading-relaxed max-w-xs">
                             Resúmenes inteligentes que inspiran conocimiento y te mantienen informado de forma rápida.
@@ -42,9 +42,9 @@ export default function Footer() {
                             <input
                                 type="email"
                                 placeholder="Tu email"
-                                className="bg-white/10 border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-gray-500 flex-1 focus:outline-none focus:border-[#E85D56]/50 transition-colors"
+                                className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white placeholder-slate-500 flex-1 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all"
                             />
-                            <button className="bg-[#E85D56] hover:bg-[#d14a43] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors shrink-0">
+                            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md hover:shadow-lg hover:shadow-blue-500/20 transition-all shrink-0">
                                 Suscribir
                             </button>
                         </div>

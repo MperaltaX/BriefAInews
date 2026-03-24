@@ -65,9 +65,9 @@ export default function Header() {
 
     return (
         <>
-            {/* ── Sticky Dark Navigation Bar ── */}
+            {/* ── Sticky Glass Navigation Bar ── */}
             <header className="sticky top-0 z-50">
-                <div className="bg-[#1a1a2e]">
+                <div className="bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between h-14">
                             {/* Logo - Mobile (always visible) + Desktop (only when logo section hidden) */}
@@ -78,8 +78,8 @@ export default function Header() {
                                     : 'md:opacity-0 md:w-0 md:mr-0 md:overflow-hidden'
                                     }`}
                             >
-                                <span className="text-white text-xl font-black tracking-tight whitespace-nowrap">
-                                    Brief<span className="text-[#E85D56]">AI</span>news
+                                <span className="text-gray-900 text-xl font-black tracking-tight whitespace-nowrap">
+                                    Brief<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">AI</span>news
                                 </span>
                             </a>
 
@@ -91,8 +91,8 @@ export default function Header() {
                                         key={filter}
                                         onClick={() => handleFilterChange(filter)}
                                         className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${currentFilter === filter
-                                            ? 'bg-white/15 text-white'
-                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                            ? 'bg-gradient-to-r from-blue-50/80 to-purple-50/80 text-blue-700 border border-blue-500/20 shadow-sm'
+                                            : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/50'
                                             }`}
                                         aria-pressed={currentFilter === filter}
                                     >
@@ -104,32 +104,32 @@ export default function Header() {
                             {/* Right Icons & Auth */}
                             <div className="flex items-center gap-3 shrink-0">
                                 {/* Search Icon */}
-                                <button className="text-gray-400 hover:text-white transition-colors p-1.5 hidden md:block" aria-label="Buscar">
+                                <button className="text-gray-500 hover:text-blue-600 transition-colors p-1.5 hidden md:block" aria-label="Buscar">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </button>
 
                                 {/* Auth Buttons (Desktop) */}
-                                <div className="hidden md:flex items-center gap-3 border-l border-white/10 pl-3 ml-1">
+                                <div className="hidden md:flex items-center gap-3 border-l border-gray-200 pl-3 ml-1">
                                     {user ? (
                                         <div className="flex items-center gap-3">
-                                            <span className="text-xs font-medium text-gray-300">
-                                                Hola, <span className="text-white">{user.name.split(' ')[0]}</span>
+                                            <span className="text-xs font-medium text-gray-500">
+                                                Hola, <span className="text-gray-900 font-bold">{user.name.split(' ')[0]}</span>
                                             </span>
                                             <button
                                                 onClick={logout}
-                                                className="text-xs font-medium text-gray-400 hover:text-red-400 transition-colors"
+                                                className="text-xs font-medium text-gray-500 hover:text-red-500 transition-colors"
                                             >
                                                 Salir
                                             </button>
                                         </div>
                                     ) : (
                                         <>
-                                            <Link href="/login" className="text-xs font-medium text-gray-300 hover:text-white transition-colors">
+                                            <Link href="/login" className="text-xs font-medium text-gray-500 hover:text-blue-600 transition-colors">
                                                 Ingresar
                                             </Link>
-                                            <Link href="/register" className="text-xs font-medium bg-[#E85D56] text-white px-3 py-1.5 rounded-full hover:bg-[#d44d47] transition-colors">
+                                            <Link href="/register" className="text-xs font-medium bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-1.5 rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all">
                                                 Registrarse
                                             </Link>
                                         </>
@@ -137,7 +137,7 @@ export default function Header() {
                                 </div>
 
                                 {/* Hamburger - Mobile */}
-                                <button className="md:hidden text-gray-400 hover:text-white transition-colors p-1.5" aria-label="Menú">
+                                <button className="md:hidden text-gray-500 hover:text-blue-600 transition-colors p-1.5" aria-label="Menú">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                                     </svg>
@@ -153,8 +153,8 @@ export default function Header() {
                                         key={filter}
                                         onClick={() => handleFilterChange(filter)}
                                         className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${currentFilter === filter
-                                            ? 'bg-white/15 text-white'
-                                            : 'text-gray-400 hover:text-white'
+                                            ? 'bg-gradient-to-r from-blue-50/80 to-purple-50/80 text-blue-700 border border-blue-500/20 shadow-sm'
+                                            : 'text-gray-500 hover:text-gray-900'
                                             }`}
                                         aria-pressed={currentFilter === filter}
                                     >
@@ -178,7 +178,7 @@ export default function Header() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <a href="/" className="inline-block">
                         <h1 className="text-3xl font-black tracking-tight text-gray-900">
-                            Brief<span className="text-[#E85D56]">AI</span>news
+                            Brief<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">AI</span>news
                         </h1>
                     </a>
                 </div>

@@ -14,12 +14,13 @@ export const metadata = {
 };
 
 import { AuthProvider } from "@/context/AuthContext";
-
+import NeuralBackground from "@/components/NeuralBackground";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={`${inter.variable} antialiased`}>
+        <NeuralBackground />
         <AuthProvider>
           {children}
         </AuthProvider>

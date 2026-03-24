@@ -22,7 +22,7 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
     const relativeTime = getRelativeTime(mainArticle.published_time);
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="pt-2 pb-8">
             {/* Section Header */}
             <div className="section-header">
                 <h2 className="section-title">Lectura Obligada</h2>
@@ -71,8 +71,8 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                         <div className="p-6">
                             {/* Portal & Time */}
                             <div className="flex items-center gap-2 mb-2">
-                                <div className="w-6 h-6 rounded-full bg-[#E85D56]/10 flex items-center justify-center">
-                                    <span className="text-[8px] font-bold text-[#E85D56] uppercase">
+                                <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center">
+                                    <span className="text-[8px] font-bold text-blue-600 uppercase">
                                         {mainArticle.portal?.charAt(0) || 'N'}
                                     </span>
                                 </div>
@@ -82,7 +82,7 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-lg md:text-xl font-extrabold text-gray-900 leading-tight mb-3 hover:text-[#E85D56] transition-colors">
+                            <h3 className="text-lg md:text-xl font-extrabold text-gray-900 leading-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all">
                                 {mainArticle.title}
                             </h3>
 
@@ -94,7 +94,7 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                             {/* Category */}
                             <div className="flex items-center gap-2">
                                 {mainArticle.category && (
-                                    <span className="text-xs font-semibold text-[#E85D56]">
+                                    <span className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                                         {mainArticle.category}
                                     </span>
                                 )}
@@ -119,7 +119,7 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                 </div>
 
                 {/* Side Compact Cards with Images */}
-                <div className="lg:col-span-2 flex flex-col gap-0 bg-white rounded-2xl p-5">
+                <div className="lg:col-span-2 flex flex-col gap-0 bg-white rounded-2xl p-5 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                     {sideArticles.map((article) => (
                         <CompactCard
                             key={article.id_article || article._id}
@@ -128,6 +128,6 @@ export default function MustRead({ mainArticle, sideArticles = [] }) {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

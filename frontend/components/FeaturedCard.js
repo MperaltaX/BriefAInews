@@ -28,19 +28,20 @@ export default function FeaturedCard({ article }) {
 
     return (
         <>
-            <article
-                className="relative w-full h-full min-h-[420px] rounded-2xl overflow-hidden group cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        setIsModalOpen(true);
-                    }
-                }}
-            >
-                {/* Background Image */}
+            <div className="relative w-full h-full rounded-[17px] p-[1.5px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 shadow-[0_10px_30px_rgba(0,0,0,0.05)] group-hover:shadow-[0_0_25px_rgba(0,82,255,0.4)] hover:shadow-[0_0_25px_rgba(0,82,255,0.4)] transition-all duration-300">
+                <article
+                    className="relative w-full h-full min-h-[420px] rounded-2xl overflow-hidden cursor-pointer"
+                    onClick={() => setIsModalOpen(true)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            setIsModalOpen(true);
+                        }
+                    }}
+                >
+                    {/* Background Image */}
                 <img
                     src={imageUrl}
                     alt={article.title}
@@ -62,10 +63,10 @@ export default function FeaturedCard({ article }) {
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
                     {/* Portal & Time */}
                     <div className="flex items-center gap-2 mb-3">
-                        <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
                             {article.portal}
                         </span>
-                        <span className="text-white/70 text-xs font-medium">{relativeTime}</span>
+                        <span className="text-white/80 text-xs font-medium">{relativeTime}</span>
                     </div>
 
                     {/* Title */}
@@ -83,7 +84,8 @@ export default function FeaturedCard({ article }) {
                         <span className="text-white/50 text-xs font-medium">{publishedDate}</span>
                     </div>
                 </div>
-            </article>
+                </article>
+            </div>
 
             {/* Summary Modal */}
             <NewsModal

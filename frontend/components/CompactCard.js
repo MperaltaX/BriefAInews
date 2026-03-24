@@ -53,7 +53,7 @@ export default function CompactCard({ article }) {
                 <div className="flex-1 min-w-0">
                     {/* Portal & Time */}
                     <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-[11px] font-bold text-[#E85D56] uppercase tracking-wide">
+                        <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wide">
                             {article.portal}
                         </span>
                         <span className="text-[11px] text-gray-400">•</span>
@@ -61,14 +61,14 @@ export default function CompactCard({ article }) {
                     </div>
 
                     {/* Title */}
-                    <h4 className="text-sm font-bold text-gray-900 leading-snug line-clamp-2 group-hover:text-[#E85D56] transition-colors">
+                    <h4 className="text-sm font-bold text-gray-900 leading-snug line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all">
                         {article.title}
                     </h4>
 
                     {/* Category + Country */}
                     <div className="flex items-center gap-2 mt-2">
                         {article.category && (
-                            <span className="text-[11px] font-semibold text-[#E85D56]">
+                            <span className="text-[11px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                                 {article.category}
                             </span>
                         )}

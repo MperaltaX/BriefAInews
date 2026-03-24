@@ -21,7 +21,7 @@ export default function StandardCard({ article }) {
     return (
         <>
             <article
-                className="flex flex-col bg-white rounded-2xl overflow-hidden card-hover cursor-pointer"
+                className="flex flex-col bg-white rounded-[17px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,114,255,0.1)] border border-gray-100 transition-all duration-300 cursor-pointer group"
                 onClick={() => setIsModalOpen(true)}
                 role="button"
                 tabIndex={0}
@@ -64,7 +64,7 @@ export default function StandardCard({ article }) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-base font-bold text-gray-900 leading-snug mb-2 line-clamp-2 hover:text-[#E85D56] transition-colors">
+                    <h3 className="text-base font-bold text-gray-900 leading-snug mb-2 line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all">
                         {article.title}
                     </h3>
 
@@ -77,7 +77,7 @@ export default function StandardCard({ article }) {
                     <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-50">
                         <div className="flex items-center gap-2">
                             {article.category && (
-                                <span className="text-xs font-semibold text-[#E85D56]">
+                                <span className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
                                     {article.category}
                                 </span>
                             )}
@@ -90,7 +90,7 @@ export default function StandardCard({ article }) {
                                 </>
                             )}
                         </div>
-                        <span className="text-xs font-semibold text-gray-500 hover:text-[#E85D56] transition-colors">
+                        <span className="text-xs font-semibold text-gray-500 group-hover:text-blue-600 transition-colors">
                             Leer más →
                         </span>
                     </div>
