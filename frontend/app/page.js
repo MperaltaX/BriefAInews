@@ -6,6 +6,7 @@ import MustRead from '@/components/MustRead';
 import OtrasNoticias from '@/components/OtrasNoticias';
 import Footer from '@/components/Footer';
 import DailyAudioPlayer from '@/components/DailyAudioPlayer';
+import PortadaSidebar from '@/components/PortadaSidebar';
 
 export const dynamic = 'force-dynamic';
 
@@ -115,6 +116,9 @@ export default async function Home({ searchParams }) {
 
                         {/* ── Right Sidebar ── */}
                         <aside className="lg:col-span-4 space-y-8 lg:pt-8 w-full max-w-sm mx-auto lg:max-w-none">
+                            {/* Portada Preview & Modal */}
+                            <PortadaSidebar />
+
                             {/* Trending Section */}
                             <div className="bg-white rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100">
                                 <h3 className="text-lg font-bold text-gray-900 mb-5 flex items-center gap-2">

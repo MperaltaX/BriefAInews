@@ -31,6 +31,9 @@ app.use('/api/auth', authRoutes);
 const aiRoutes = require('./routes/ai.routes');
 app.use('/api/ai', aiRoutes);
 
+const templateRoutes = require('./routes/template.routes');
+app.use('/api/templates', templateRoutes);
+
 // Global Error Handler
 app.use(errorHandler);
 
