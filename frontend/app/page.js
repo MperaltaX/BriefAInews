@@ -7,6 +7,7 @@ import OtrasNoticias from '@/components/OtrasNoticias';
 import Footer from '@/components/Footer';
 import DailyAudioPlayer from '@/components/DailyAudioPlayer';
 import PortadaSidebar from '@/components/PortadaSidebar';
+import NewspaperView from '@/components/NewspaperView';
 
 export const dynamic = 'force-dynamic';
 
@@ -86,6 +87,9 @@ export default async function Home({ searchParams }) {
                         featured={heroFeatured}
                         sideArticles={heroSideArticles}
                     />
+
+                    {/* ── Diario Digital IA Section ── */}
+                    <NewspaperView />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
